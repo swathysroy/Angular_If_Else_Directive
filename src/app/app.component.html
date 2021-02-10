@@ -1,0 +1,23 @@
+<hello name="{{ name }}"></hello>
+<div>
+	Role: <input type="text" [(ngModel)]="name"/>
+	<br>
+	<ng-template [ngIf]="name == 'admin'" [ngIfElse]="second">
+		<h2>Welcome {{name}}</h2>
+	</ng-template>
+	<ng-template #second>
+		<ng-template [ngIf]="name == 'manager'" [ngIfElse]="third">
+			<h2>Welcome {{name}}</h2>
+			<br/> <br/>
+			<a href="https://www.google.com">Click to browse</a>
+      <br/> <br/>
+			<a href="https://www.myatos-syntel.net/">Login Atos</a>
+		</ng-template>
+	</ng-template>
+	<ng-template #third>
+		<ng-template [ngIf]="name == 'customer'">
+			<h2>Welcome {{name}}</h2>
+		</ng-template>
+	</ng-template>
+	<!--button type="button" (click) = "onButtonClick()">Click me</button-->
+</div>
